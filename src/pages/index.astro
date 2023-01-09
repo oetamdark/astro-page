@@ -1,7 +1,9 @@
 ---
-import Layout from "../layout/layout.astro"
+import Layout from "../layout/layout.astro";
+import Topcontent from "../components/top-content.astro";
+import Introcontent from "../components/intro-content.astro";
 ---
-<Layout pageTitle="Home page">
-	<h1>mi primera pagina en astro</h1>
-	<p>hola a todos</p>
+<Layout pageTitle="Bienvenido a mi pagina">
+	<Topcontent></Topcontent>
+	<Introcontent></Introcontent>
 </Layout>

@@ -1,0 +1,117 @@
+@import '../../styles/scss/variblables';
+
+* {
+	box-sizing: border-box;
+
+	&:focus {
+		outline: 0 !important;
+	}
+}
+
+html {
+	font-size: 16px;
+
+}
+
+body {
+	font-family: $primary_font;
+	@include fontStyle($color: $txt_color, $size: 16px);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $bg_color;
+}
+
+a,
+input,
+button {
+	color: $primary_color;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.link-right {
+	position: relative;
+	display: inline-block;
+
+	&::before {
+		content: "";
+		width: 0;
+		height: 1px;
+		background: $secondary_color;
+		@include pos($bottom: 0, $right: 0);
+		@include transition();
+	}
+
+	&:hover,
+	&.active {
+		&::before {
+			left: 0;
+			width: 100%;
+			@include transition();
+		}
+	}
+}
+
+.link-middle {
+	position: relative;
+	display: inline-block;
+
+	&::before {
+		content: "";
+		height: 1px;
+		background: $secondary_color;
+		@include pos($right: 51%, $bottom: 0, $left: 51%);
+		@include transition();
+	}
+
+	&:hover,
+	&.active {
+		&::before {
+			left: 0;
+			right: 0;
+			@include transition();
+		}
+	}
+}
+
+
+.link-left {
+	position: relative;
+	display: inline-block;
+
+	&::before {
+		content: "";
+		width: 0;
+		height: 1px;
+		background: $secondary_color;
+		@include pos($bottom: 0, $left: 0);
+		@include transition();
+	}
+
+	&:hover,
+	&.active {
+		&::before {
+			left: 0;
+			width: 100%;
+			@include transition();
+		}
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1500px;
+	width: 100%;
+  }
+  
+  .container {
+	width: 95%;
+	max-width: 1170px;
+	margin: 0 auto;
+  }

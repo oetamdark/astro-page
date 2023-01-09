@@ -1,4 +1,6 @@
 ---
+import '../styles/normalize.css';
+import '../styles/styles.scss';
 interface Props {
     pageTitle?: string
 };
@@ -9,16 +11,26 @@ import Footer from "../layout/footer.astro";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- libreries CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <Header/>
-        <main>
-            <slot/>
-        </main>
+		<Header/>
+			<main>
+				<slot/>	
+			</main>
         <Footer/>
+		<!-- libreries JS -->
+		<script is:inline src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+		<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		<script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="../js/custom.js"></script>
 	</body>
 </html>
